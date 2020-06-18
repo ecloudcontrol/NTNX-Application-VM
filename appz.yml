@@ -1,0 +1,57 @@
+app:
+  name: NTNX Application VM
+  code: NTNXAPPVM
+  notify: appzdev@cloudbourne.co
+    
+build:
+  version: 2.9
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: ansible-2.9
+  image_name: alpha/ansible-2.9
+    
+deploy:
+  context: alpha/DEV
+  replicas: 1
+
+    
+monitor:
+  notify: appzops@cloudbourne.co      
+    
+properties:
+  NUTANIX_VM_USER_NAME: admin
+  NUTANIX_VM_ENDPOINT: https://10.42.111.37:9440
+  NUTANIX_VM_ADDRESS: 10.42.111.37
+  NUTANIX_VM_PORT: 9440
+  NUTANIX_VM_CLUSTER_NAME: PHX-POC111
+  NUTANIX_VM_SUBNET_NAME: Rx-Automation-Network
+  NUTANIX_VM_DISK_SIZE: 102400
+  NUTANIX_VM_NAME: tomcat_ansible
+  NUTANIX_VM_RAM: 8192
+  NUTANIX_VM_CPU_PER_SOCKET: 4
+  NUTANIX_VM_CPU_SOCKET: 1
+  NUTANIX_VM_IMAGE: cent7osDisk
+  NUTANIX_VM_DOMIAN: localhost
+  NUTANIX_VM_ANSIBLE_USER_NAME: ansible
+  TOMCAT_FLUENT_AGGREGATOR_HOST: 10.42.111.52
+  TOMCAT_FLUENT_AGGREGATOR_PORT: 31212
+  TOMCAT_WAR_FILE_SOURCE: /tmp
+  NUTANIX_VM_ANSIBLE_PUB_KEY:
+    vault: NUTANIX_VM_ANSIBLE_PUB_KEY
+  NUTANIX_VM_ANSIBLE_KEY:
+    vault: NUTANIX_VM_ANSIBLE_KEY  
+  NUTANIX_VM_USER_PASSWORD: 
+    vault: NUTANIX_VM_USER_PASSWORD
+  NUTANIX_VM_ROOT_PASSWORD:
+    vault: NUTANIX_VM_ROOT_PASSWORD
+  VAULT_ADDR: https://vault:8200
+  VAULT_ROLE_ID: 
+  VAULT_SECRET_ID:
+  VAULT_APPROLE:
+  APPZ_TEARDOWN_TOKEN: 20200616-1450
+  PLAY: nutanix_vm,tomcat
+  NUTANIX_VM_INVERTORY_HOST: tomcat
+  NUTANIX_VM_HOSTNAME: localhost
+  TOMCAT_HOSTNAME: tomcat
+  revision : 01
