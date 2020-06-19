@@ -50,4 +50,4 @@ properties:
   NUTANIX_VM_INVERTORY_HOST: tomcat
   NUTANIX_VM_HOSTNAME: localhost
   TOMCAT_HOSTNAME: tomcat
-  revision : 11
+  revision : 12
