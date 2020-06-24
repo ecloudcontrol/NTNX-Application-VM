@@ -58,6 +58,6 @@ properties:
   CENTOS_BASE_FLUENT_AGGREGATOR_HOST: 10.42.111.52
   CENTOS_BASE_FLUENT_AGGREGATOR_PORT: 31212
 # common properties  
-  APPZ_TEARDOWN_TOKEN: 20200624-0110
+  APPZ_TEARDOWN_TOKEN: 20200624-0100
   PLAY: nutanix_vm,centos_base,tomcat,tomcat_deploy
   revision : 12
