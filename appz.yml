@@ -19,13 +19,20 @@ monitor:
   notify: appzops@cloudbourne.co      
 
 properties:
-# Nutanix VM properties
-  NUTANIX_VM_PROVIDER_USER_NAME: admin
+# AppZ Ansible Playbook
+  PLAY: nutanix_vm,centos_base,tomcat,tomcat_deploy
+
+# Nutanix AHV Environment properties
   NUTANIX_VM_ENDPOINT: https://10.42.111.37:9440
   NUTANIX_VM_ADDRESS: 10.42.111.37
   NUTANIX_VM_PORT: 9440
   NUTANIX_VM_CLUSTER_NAME: PHX-POC111
   NUTANIX_VM_SUBNET_NAME: Rx-Automation-Network
+  NUTANIX_VM_PROVIDER_USER_NAME: admin
+  NUTANIX_VM_PROVIDER_USER_PASSWORD:
+    vault: NUTANIX_VM_PROVIDER_USER_PASSWORD
+    
+# Ntuanix VM Properties
   NUTANIX_VM_ROOT_DISK_SIZE: 102400
   NUTANIX_VM_DATA_DISK_SIZE: 102400
   NUTANIX_VM_NAME: tomcat_ntnx
@@ -41,23 +48,23 @@ properties:
     vault: NUTANIX_VM_ANSIBLE_KEY
   NUTANIX_VM_ROOT_PASSWORD: 
     vault: NUTANIX_VM_USER_PASSWORD
-  NUTANIX_VM_PROVIDER_USER_PASSWORD:
-    vault: NUTANIX_VM_PROVIDER_USER_PASSWORD
   NUTANIX_VM_INVERTORY_HOST: tomcat
   NUTANIX_VM_HOSTNAME: localhost
-# Tomcat properties  
+
+# Centos Base properties  
+  CENTOS_BASE_HOSTNAME: tomcat
+  CENTOS_BASE_FLUENT_AGGREGATOR_HOST: 10.42.111.52
+  CENTOS_BASE_FLUENT_AGGREGATOR_PORT: 31212
+
+# Tomcat Application properties  
   TOMCAT_DEPLOY_WAR_FILE_SOURCE: https://www.ecloudcontrol.com/wp-content/uploads/2020/06/tomcat-loadgen-1.1.zip
   TOMCAT_DEPLOY_TITLE: Tomcat_ansible_hello_world
   TOMCAT_DEPLOY_APPZ_IMAGE_VERSION: 8.5
   TOMCAT_DEPLOY_APPZ_ENV: dev
   TOMCAT_DEPLOY_NANO: 70
   TOMCAT_DEPLOY_HOSTNAME: tomcat
-  TOMCAT_HOSTNAME: tomcat
-# Centos Base properties  
-  CENTOS_BASE_HOSTNAME: tomcat
-  CENTOS_BASE_FLUENT_AGGREGATOR_HOST: 10.42.111.52
-  CENTOS_BASE_FLUENT_AGGREGATOR_PORT: 31212
+  TOMCAT_HOSTNAME: tomcat  
+
 # common properties  
   APPZ_TEARDOWN_TOKEN: 20200624-0100
-  PLAY: nutanix_vm,centos_base,tomcat,tomcat_deploy
   revision : 12
