@@ -2,7 +2,7 @@ app:
   name: NTNX Application VM
   code: NTNXAPPVM
   notify: appzdev@cloudbourne.co
-    
+
 build:
   version: 2.9
   env: DEV
@@ -10,15 +10,14 @@ build:
   output_files: output/*.zip
   image_template: ansible-2.9
   image_name: alpha/ansible-2.9
-    
+
 deploy:
   context: alpha/DEV
   replicas: 1
 
-    
 monitor:
   notify: appzops@cloudbourne.co      
-    
+
 properties:
 # Nutanix VM properties
   NUTANIX_VM_PROVIDER_USER_NAME: admin
@@ -59,6 +58,6 @@ properties:
   CENTOS_BASE_FLUENT_AGGREGATOR_HOST: 10.42.111.52
   CENTOS_BASE_FLUENT_AGGREGATOR_PORT: 31212
 # common properties  
-  APPZ_TEARDOWN_TOKEN: 20200623-2125
+  APPZ_TEARDOWN_TOKEN: 20200624-0110
   PLAY: nutanix_vm,centos_base,tomcat,tomcat_deploy
   revision : 12
