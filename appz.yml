@@ -20,7 +20,7 @@ monitor:
 
 properties:
 # AppZ Ansible Playbook
-  PLAY: nutanix_vm,centos_base,tomcat,tomcat_deploy
+  APPZ_PLAYLIST: nutanix_vm,centos_base,tomcat,tomcat_deploy
 
 # Nutanix AHV Environment properties
   NUTANIX_PRISM_ADDRESS: 10.42.111.37
