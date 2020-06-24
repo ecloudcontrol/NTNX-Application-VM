@@ -48,7 +48,7 @@ properties:
     vault: NUTANIX_VM_ANSIBLE_KEY
   NUTANIX_VM_ROOT_PASSWORD: 
     vault: NUTANIX_VM_ROOT_PASSWORD
-  NUTANIX_VM_INVERTORY_HOST: tomcat
+  NUTANIX_VM_INVENTORY_HOST: tomcat
   NUTANIX_VM_HOSTNAME: localhost
 
 # Centos Base properties  
