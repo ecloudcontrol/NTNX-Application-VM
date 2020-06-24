@@ -9,7 +9,7 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: ansible-2.9
-  image_name: alpha/ansible-2.9
+  image_name: alpha/ntnx_app_ansible-2.9
 
 deploy:
   context: alpha/DEV
@@ -66,5 +66,5 @@ properties:
 
 # common properties  
   MOD_CLUSTER: modcluster-1-3:6666
-  APPZ_TEARDOWN_TOKEN: 20200624-1850
+  APPZ_TEARDOWN_TOKEN: 20200624-1940
   revision : 12
