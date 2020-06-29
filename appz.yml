@@ -34,7 +34,7 @@ properties:
 # Ntuanix VM Properties
   NUTANIX_VM_ROOT_DISK_SIZE: 102400
   NUTANIX_VM_DATA_DISK_SIZE: 102400
-  NUTANIX_VM_NAME: tomcat_ntnx_1261
+  NUTANIX_VM_NAME: tomcat_ntnx
   NUTANIX_VM_RAM: 8192
   NUTANIX_VM_CPU_PER_SOCKET: 4
   NUTANIX_VM_CPU_SOCKET: 1
@@ -66,5 +66,5 @@ properties:
 
 # common properties  
   MOD_CLUSTER: modcluster-1-3:6666
-  APPZ_TEARDOWN_TOKEN: 20200629-1615
+  APPZ_TEARDOWN_TOKEN: 20200629-1515
   revision : 12
